@@ -41,11 +41,12 @@ def main():
     # we want to validate user input to assure that a certain range of numbers is entered
     while True:
         try:
-            print "Please enter a number to find it's highest prime factor (enter 0 to exit)"
-            n = long(raw_input("Please enter a value: "))
+            print("Please enter a number to find it's highest prime factor (enter 0 to exit)")
+            #n = long(raw_input("Please enter a value: "))
+            n = int(input("Please enter a value: "))
             break
         except:
-            print "please enter a value between 1 and 9223372036854775807"
+            print("please enter a value between 1 and 9223372036854775807")
     
     # let the user out of the program
     if n == 0:
@@ -57,15 +58,15 @@ def main():
     outputlist = getfactors(primes, n)
    
     if len(outputlist) > 0:
-        print "\nlist of prime factorials:"
+        print("list of prime factorials:")
         for i in outputlist:
-            print i
+            print(i)
         
         highestprime = outputlist[len(outputlist)-1]
-        print '\nthis is the highest prime factorial of %i:' % n
-        print highestprime
+        print(f"this is the highest prime factorial of {n}:\n")
+        print(highestprime)
     else:
-        print "\nThis number contains no prime factorials"
+        print("This number contains no prime factorials")
 
 if __name__ == '__main__':
     main()
